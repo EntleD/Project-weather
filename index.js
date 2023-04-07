@@ -48,6 +48,8 @@ h2.innerHTML = ` Last updated: ${day} ${hours}:${minutes}`;
 
 function showConditions(response) {
   console.log(response);
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(response.data.main.temp);
 }
 
 let apiKey = "32b60624683015da61e2ddd35066df2b";
