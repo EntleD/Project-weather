@@ -82,13 +82,6 @@ function currentPosition(position) {
   axios.get(apiUrl).then(showWeather);
 }
 
-function showCurrentArea(event) {
-  event.preventDefault();
-  navigator.geolocation.getCurrentPosition(currentPosition);
-}
-let currentLocation = document.querySelector("#area-button");
-currentLocation.addEventListener("click", showCurrentArea);
-
 let searchForm = document.querySelector("#search-button");
 searchForm.addEventListener("submit", searchCity);
 
