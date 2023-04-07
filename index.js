@@ -46,7 +46,7 @@ console.log(now.getFullYear);
 let h2 = document.querySelector("h2");
 h2.innerHTML = ` Last updated: ${day} ${hours}:${minutes}`;
 
-function searchCity(response) {
+function showConditions(response) {
   console.log(response);
 }
 
@@ -54,6 +54,3 @@ let apiKey = "32b60624683015da61e2ddd35066df2b";
 let city = "Cape Town";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then(showConditions);
-
-let searchForm = document.querySelector("#search-button");
-searchForm.addEventListener("submit", searchCity);
