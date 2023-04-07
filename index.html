@@ -21,7 +21,7 @@
   </head>
   <body>
     <div class="container">
-      <span class="border border-dark-mb4">
+      <div class="project-weather">
 
       <h1>Weather</h1>
       <h2>
@@ -72,13 +72,22 @@
   </div>
 </div>
 <div class="col">
-<div class="card" style="width: 18rem">
+<div class="card" style="width: 18rem;">
   <div class="card-body">
     <p class="card-text">
-       <div>Sunny day with no clouds</div>
-      <div id="weather-description"></div>
-            <div id="wind-bar">Wind: 30km/h</div>
-            <div id="humidity">Precipitation: 0%</div>
+      <div class="col md-6">
+        <ul>
+          <li>
+           Sunny day with no clouds 
+          </li>
+          <li>
+          Wind: 30km/h  
+          </li>
+          <li>
+            Precipitation: 0%
+          </li>
+        </ul>
+      </div>
              </p>
       </div>
   </div>
@@ -114,7 +123,7 @@
 
 </span>
 
-<p> <a href="https://github.com/EntleD/Project-weather">Open-source code</a> by Entle Dubese </p> 
+<small> <a href="https://github.com/EntleD/Project-weather">Open-source code</a> by Entle Dubese </small> 
 
 <script src="index.js"></script>
 </body>

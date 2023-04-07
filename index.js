@@ -44,7 +44,7 @@ if (minutes < 10) {
 let year = now.getFullYear();
 console.log(now.getFullYear);
 let h2 = document.querySelector("h2");
-h2.innerHTML = `${day} ${hours}:${minutes}`;
+h2.innerHTML = ` Last updated: ${day} ${hours}:${minutes}`;
 
 function loading(event) {
   event.preventDefault();
