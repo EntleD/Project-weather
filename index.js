@@ -85,19 +85,10 @@ function fahrenheitTemp(event) {
   temperatureElement.innerHTML = Math.round(celsToFah);
 }
 
-function celsiusTemp(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(response.main.data.temp);
-}
-
 let searchForm = document.querySelector("#city-form");
 searchForm.addEventListener("submit", searchCity);
 
 let fahrenheit = document.querySelector("#fahrenheit-link");
 fahrenheit.addEventListener("click", fahrenheitTemp);
-
-let celsius = document.querySelector("#celsius-link");
-celsius.addEventListener("click", celsiusTemp);
 
 liveCity("Cape Town");
