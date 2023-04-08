@@ -48,6 +48,10 @@ h2.innerHTML = ` Last updated: ${day} ${hours}:${minutes}`;
 
 function showConditions(response) {
   console.log(response);
+  let temperatureElement = document.querySelector("#temperature");
+  let city = document.querySelector("#current-city");
+  temperatureElement.innerHTML = Math.round(response.data.temp.main);
+  city.innerHTML = response.data.name;
 }
 
 function showCurrentLocation(city) {
