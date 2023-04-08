@@ -50,7 +50,7 @@ function showConditions(response) {
   console.log(response);
   let temperatureElement = document.querySelector("#temperature");
   let city = document.querySelector("#current-city");
-  temperatureElement.innerHTML = Math.round(response.data.temp.main);
+  temperatureElement.innerHTML = Math.round(response.data.main.temp);
   city.innerHTML = response.data.name;
 }
 
