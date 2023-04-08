@@ -65,7 +65,19 @@ function showConditions(response) {
   );
 }
 
-let apiKey = "32b60624683015da61e2ddd35066df2b";
-let city = "Durban";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-axios.get(apiUrl).then(showConditions);
+function liveCity(city) {
+  let apiKey = "32b60624683015da61e2ddd35066df2b";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showConditions);
+}
+
+function searchCity(event) {
+  event.preventDefault();
+  let enterCity = document.querySelector("#search-button");
+  liveCity(enterCity.value);
+}
+
+liveCity("Cape Town");
+
+let searchForm = document.querySelector("#city-form");
+searchForm.addEventListener("submit", searchCity);
