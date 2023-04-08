@@ -56,13 +56,13 @@ function showCurrentPosition(city) {
   axios.get(apiUrl).then(showConditions);
 }
 
-showCurrentPosition("Durban");
-
 function searchCity(event) {
   event.preventDefault();
   let enterCity = document.querySelector("#search-button");
   showCurrentPosition(enterCity.value);
 }
+
+showCurrentPosition("Durban");
 
 let searchForm = document.querySelector("#city-form");
 searchForm.addEventListener("submit", searchCity);
