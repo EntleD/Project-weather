@@ -66,7 +66,7 @@ function searchCity(event) {
   showCurrentLocation(enterCity.value);
 }
 
-showCurrentLocation("Durban");
+showCurrentLocation("Cape Town");
 
 let searchForm = document.querySelector("#city-form");
 searchForm.addEventListener("submit", searchCity);
