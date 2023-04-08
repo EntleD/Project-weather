@@ -58,9 +58,11 @@ function showCurrentPosition(city) {
 
 function searchCity(event) {
   event.preventDefault();
-  let enterCity = document.querySelector("#search-button");
+  let enterCity = document.querySelector("#search");
   showCurrentPosition(enterCity.value);
 }
+
+showCurrentPosition("Durban");
 
 let searchForm = document.querySelector("#city-form");
 searchForm.addEventListener("submit", searchCity);
