@@ -62,7 +62,5 @@ function searchCity(event) {
   showCurrentPosition(enterCity.value);
 }
 
-showCurrentPosition(enterCity.value);
-
 let searchForm = document.querySelector("#city-form");
 searchForm.addEventListener("submit", searchCity);
