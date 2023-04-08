@@ -59,10 +59,13 @@ function showConditions(response) {
   description.innerHTML = response.data.weather[0].description;
   blowElement.innerHTML = Math.round(response.data.wind.speed);
   fogElement.innerHTML = response.data.main.humidity;
-  mainIcon.setAttribute("src", "https://openweathermap.org/img/wn/04d@2x.png");
+  mainIcon.setAttribute(
+    "src",
+    "https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png"
+  );
 }
 
 let apiKey = "32b60624683015da61e2ddd35066df2b";
-let city = "Tokyo";
+let city = "Madrid";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then(showConditions);
