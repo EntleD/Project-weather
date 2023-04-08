@@ -50,8 +50,14 @@ function showConditions(response) {
   console.log(response);
   let temperatureElement = document.querySelector("#temperature");
   let city = document.querySelector("#current-city");
+  let description = document.querySelector("#weather-description");
+  let blowElement = document.querySelector("#wind=bar");
+  let fogElement = document.querySelector("#humidity");
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   city.innerHTML = response.data.name;
+  description.innerHTML = response.data.weather[0].description;
+  blowElement.innerHTML = Math.round(response.data.wind.speed);
+  fogElement.innerHTML = response.data.main.humidity;
 }
 
 let apiKey = "32b60624683015da61e2ddd35066df2b";
