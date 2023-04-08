@@ -63,6 +63,6 @@ function showConditions(response) {
 }
 
 let apiKey = "32b60624683015da61e2ddd35066df2b";
-let city = "Cape Town";
+let city = "Tokyo";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then(showConditions);
