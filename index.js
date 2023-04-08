@@ -57,7 +57,7 @@ axios.get(apiUrl).then(showConditions);
 function searchCity(event) {
   event.preventDefault();
   let enterCity = document.querySelector("#search-button");
-  console.log(enterCity);
+  console.log(enterCity.value);
 }
 
 let searchForm = document.querySelector("#city-form");
