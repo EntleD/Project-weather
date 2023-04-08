@@ -82,7 +82,7 @@ function searchCity(event) {
 
 function fahrenheitTemp(event) {
   event.preventDefault();
-  let celsToFah = (celsiusTemperature * 9) / 5 + 32;
+  let celsToFah = (mainCelsius * 9) / 5 + 32;
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(celsToFah);
 }
