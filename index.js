@@ -54,7 +54,10 @@ function showConditions(response) {
   let blowElement = document.querySelector("#wind-bar");
   let fogElement = document.querySelector("#humidity");
   let mainIcon = document.querySelector("#weather-icon");
-  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+
+  mainCelsius = response.main.data.temp;
+
+  temperatureElement.innerHTML = Math.round(mainCelsius);
   cityElement.innerHTML = response.data.name;
   description.innerHTML = response.data.weather[0].description;
   blowElement.innerHTML = Math.round(response.data.wind.speed);
@@ -79,15 +82,26 @@ function searchCity(event) {
 
 function fahrenheitTemp(event) {
   event.preventDefault();
-  let celsToFah = (15 * 9) / 5 + 32;
+  let celsToFah = (celsiusTemperature * 9) / 5 + 32;
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(celsToFah);
 }
 
-liveCity("Cape Town");
+function celsiusTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(mainCelsius);
+}
+
+let mainCelsius = null;
 
 let searchForm = document.querySelector("#city-form");
 searchForm.addEventListener("submit", searchCity);
 
 let fahrenheit = document.querySelector("#fahrenheit-link");
 fahrenheit.addEventListener("click", fahrenheitTemp);
+
+let celsius = document.querySelector("#celsius-link");
+celsius.addEventListener("click", celsiusTemp);
+
+liveCity("Cape Town");
