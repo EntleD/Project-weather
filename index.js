@@ -58,7 +58,6 @@ function showConditions(response) {
   overview.innerHTML = response.data.weather[0].description;
   blowElement.innerHTML = response.data.main
   mightRain.innerHTML = response.data.main;
-
 }
 
 let apiKey = "32b60624683015da61e2ddd35066df2b";
