@@ -61,7 +61,7 @@ function showConditions(response) {
   fogElement.innerHTML = response.data.main.humidity;
   mainIcon.setAttribute(
     "src",
-    "https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png"
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
 }
 
