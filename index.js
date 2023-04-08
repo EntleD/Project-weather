@@ -53,3 +53,12 @@ function showConditions(response) {
 let apiKey = "32b60624683015da61e2ddd35066df2b";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Cape Town&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then(showConditions);
+
+function searchCity(event) {
+  event.preventDefault();
+  let enterCity = document.querySelector("#search-button");
+  console.log(enterCity);
+}
+
+let searchForm = document.querySelector("#city-form");
+searchForm.addEventListener("submit", searchCity);
