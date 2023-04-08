@@ -51,7 +51,7 @@ function showConditions(response) {
   let temperatureElement = document.querySelector("#temperature");
   let city = document.querySelector("#current-city");
   let description = document.querySelector("#weather-description");
-  let blowElement = document.querySelector("#wind=bar");
+  let blowElement = document.querySelector("#wind-bar");
   let fogElement = document.querySelector("#humidity");
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   city.innerHTML = response.data.name;
