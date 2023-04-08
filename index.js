@@ -55,9 +55,7 @@ function showConditions(response) {
   let fogElement = document.querySelector("#humidity");
   let mainIcon = document.querySelector("#weather-icon");
 
-  mainCelsius = response.main.data.temp;
-
-  temperatureElement.innerHTML = Math.round(mainCelsius);
+  temperatureElement.innerHTML = Math.round(response.main.data.temp);
   cityElement.innerHTML = response.data.name;
   description.innerHTML = response.data.weather[0].description;
   blowElement.innerHTML = Math.round(response.data.wind.speed);
@@ -82,7 +80,7 @@ function searchCity(event) {
 
 function fahrenheitTemp(event) {
   event.preventDefault();
-  let celsToFah = (mainCelsius * 9) / 5 + 32;
+  let celsToFah = (15 * 9) / 5 + 32;
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(celsToFah);
 }
@@ -90,10 +88,8 @@ function fahrenheitTemp(event) {
 function celsiusTemp(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(mainCelsius);
+  temperatureElement.innerHTML = Math.round(response.main.data.temp);
 }
-
-let mainCelsius = null;
 
 let searchForm = document.querySelector("#city-form");
 searchForm.addEventListener("submit", searchCity);
