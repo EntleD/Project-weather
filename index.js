@@ -49,17 +49,20 @@ h2.innerHTML = ` Last updated: ${day} ${hours}:${minutes}`;
 function showConditions(response) {
   console.log(response);
   let temperatureElement = document.querySelector("#temperature");
-  let city = document.querySelector("#current-city");
+  let cityElement = document.querySelector("#current-city");
   let description = document.querySelector("#weather-description");
   let blowElement = document.querySelector("#wind-bar");
   let fogElement = document.querySelector("#humidity");
+  let mainIcon = document.querySelector("#weather-icon");
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
-  city.innerHTML = response.data.name;
+  cityElement.innerHTML = response.data.name;
   description.innerHTML = response.data.weather[0].description;
   blowElement.innerHTML = Math.round(response.data.wind.speed);
   fogElement.innerHTML = response.data.main.humidity;
+  mainIcon.setAttribute("src", "https://openweathermap.org/img/wn/04d@2x.png");
 }
 
 let apiKey = "32b60624683015da61e2ddd35066df2b";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Cape Town&appid=${apiKey}&units=metric`;
+let city = "Cape Town";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then(showConditions);
