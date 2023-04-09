@@ -10,6 +10,7 @@ h1 {
 
 .project-weather {
   margin: 25px auto;
+  padding: 0 0 0 30px;
   max-width: 900px;
   border: 1px solid black;
   border-radius: 10px;
