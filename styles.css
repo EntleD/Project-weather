@@ -5,6 +5,7 @@ h1 {
 
 .container.text-center {
   padding-top: 100px;
+  padding-bottom: 30px;
 }
 
 .project-weather {
@@ -47,4 +48,8 @@ li {
 
 .active:hover {
   text-decoration: none;
+}
+
+small {
+  text-align: center;
 }
