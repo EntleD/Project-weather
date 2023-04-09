@@ -108,4 +108,4 @@ fahrenheit.addEventListener("click", fahrenheitTemp);
 let celsius = document.querySelector("#celsius-link");
 celsius.addEventListener("click", celsiusTemp);
 
-liveCity("Cape Town");
+liveCity(📍"Cape Town");
