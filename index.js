@@ -83,6 +83,8 @@ function searchCity(event) {
 function fahrenheitTemp(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
+  celsius.classList.remove("active");
+  fahrenheit.classList.add("active");
   let celsToFah = (mainCelsius * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(celsToFah);
 }
@@ -90,6 +92,8 @@ function fahrenheitTemp(event) {
 function celsiusTemp(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
+  celsius.classList.add("active");
+  fahrenheit.classList.remove("active");
   temperatureElement.innerHTML = Math.round(mainCelsius);
 }
 

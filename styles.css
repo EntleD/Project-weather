@@ -44,7 +44,3 @@ li {
   cursor: default;
   text-decoration: none;
 }
-
-.active:hover {
-  text-decoration: none;
-}
