@@ -39,11 +39,11 @@ li {
   width: 15px;
 }
 
-.col-md-6 .active {
+.active {
   color: black;
   cursor: default;
 }
 
-.col-md-6 .active:hover {
+.active:hover {
   text-decoration: none;
 }
