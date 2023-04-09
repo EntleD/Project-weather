@@ -35,7 +35,7 @@ li {
 .temperature {
   color: black;
   font-size: 35px;
-  font-weight: 500;
+  font-weight: 350;
 }
 
 .active {
@@ -50,4 +50,5 @@ li {
 
 small {
   text-align: center;
+  margin: 0 auto;
 }
