@@ -77,7 +77,17 @@ function searchCity(event) {
   liveCity(enterCity.value);
 }
 
+function fahrenheitTemp(event) {
+  event.preventDefault();
+  let celsToFah = (17 * 9) / 5 + 32;
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celsToFah);
+}
+
 liveCity("Cape Town");
 
 let searchForm = document.querySelector("#city-form");
 searchForm.addEventListener("submit", searchCity);
+
+let fahrenheit = document.querySelector("#fahrenheit-link");
+fahrenheit.addEventListener("click", fahrenheitTemp);
