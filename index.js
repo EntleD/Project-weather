@@ -54,8 +54,7 @@ function showConditions(response) {
   let blowElement = document.querySelector("#wind-bar");
   let fogElement = document.querySelector("#humidity");
   let mainIcon = document.querySelector("#weather-icon");
-
-  temperatureElement.innerHTML = Math.round(response.main.data.temp);
+  temperatureElement.innerHTML = Math.round(response.data.main.temp);
   cityElement.innerHTML = response.data.name;
   description.innerHTML = response.data.weather[0].description;
   blowElement.innerHTML = Math.round(response.data.wind.speed);
