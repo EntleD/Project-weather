@@ -38,3 +38,12 @@ li {
 .location-pin {
   width: 15px;
 }
+
+.col-md-6 .active {
+  color: black;
+  cursor: default;
+}
+
+.col-md-6 .active:hover {
+  text-decoration: none;
+}
