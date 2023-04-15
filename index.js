@@ -54,7 +54,8 @@ function showForecast(response) {
   days.forEach(function (day) {
     forecastHTML =
       forecastHTML +
-      `<div class="col" >${day}</div>
+      `<div class="col"></div>
+       <div>${day}</div>
        <div>30°C</div><div><img src="clipart216360.png" alt="sunny weather" width="50px" /></div>
        <div>20km/h</div> 
        <div>39%</div>
@@ -69,8 +70,8 @@ function showForecast(response) {
 
 function liveForecast(coordinates) {
   console.log(coordinates);
-  let lat = coordinates.latitude;
-  let lon = coordinates.longitude;
+  let lat = coordinates.lat;
+  let lon = coordinates.lon;
   let apiKey = "32b60624683015da61e2ddd35066df2b";
   let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=$apiKey}&units=metric`;
   console.log(apiUrl);
