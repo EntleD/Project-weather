@@ -46,6 +46,11 @@ console.log(now.getFullYear);
 let h2 = document.querySelector("h2");
 h2.innerHTML = ` Last updated: ${day} ${hours}:${minutes}`;
 
+function showForecast() {
+  let weatherForecast = document.querySelector("#forecast");
+  weatherForecast.innerHTML = "Forecast";
+}
+
 function showConditions(response) {
   console.log(response);
   let temperatureElement = document.querySelector("#temperature");
@@ -109,3 +114,4 @@ let celsius = document.querySelector("#celsius-link");
 celsius.addEventListener("click", celsiusTemp);
 
 liveCity("Cape Town");
+showForecast();
