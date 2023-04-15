@@ -48,7 +48,34 @@ h2.innerHTML = ` Last updated: ${day} ${hours}:${minutes}`;
 
 function showForecast() {
   let weatherForecast = document.querySelector("#forecast");
-  weatherForecast.innerHTML = "Forecast";
+  weatherForecast.innerHTML = `
+  <div class="col">Friday
+    <div>30°C</div>
+            <div><img src="clipart216360.png" alt="sunny weather" width="50px" /></div>
+            <div>20km/h</div>
+            <div>39%</div></div>
+    <div class="col">Saturday<div>25°C</div>
+            <div><img src="clipart216360.png" alt="sunny weather" width="50px" /></div>
+            <div>20km/h</div>
+            <div>80%</div></div>
+    <div class="col">Sunday<div>22°C</div>
+            <div><img src="clipart216360.png" alt="sunny weather" width=50px /></div>
+            <div>30km/h</div>
+            <div>20%</div></div>
+    <div class="col">Monday
+            <div>20°C</div>
+            <div><img src="sun-clip-art-transparent-24.png" alt="partly sunny weather" width="68px" /></div>
+            <div>40km/h</div>
+            <div>30%</div></div>
+    <div class="col">Tuesday
+            <div>18°C</div>
+            <div> <img src="PngItem_5117855.png" alt="cloudy rain" width="70px" /></div>
+            <div>30km/h</div>
+            <div>60%</div>
+  </div>
+  </div>
+</div>
+`;
 }
 
 function showConditions(response) {
