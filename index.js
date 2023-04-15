@@ -46,7 +46,8 @@ console.log(now.getFullYear);
 let h2 = document.querySelector("h2");
 h2.innerHTML = ` Last updated: ${day} ${hours}:${minutes}`;
 
-function showForecast() {
+function showForecast(response) {
+  console.log(response.data);
   let weatherForecast = document.querySelector("#forecast");
   let forecastHTML = `<div class="row align-items-end"`;
   let days = ["Friday", "Saturday", "Sunday", "Monday", "Tuesday"];
@@ -71,6 +72,7 @@ function liveForecast(coordinates) {
   let apiKey = "32b60624683015da61e2ddd35066df2b";
   let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=$apiKey}&units=metric`;
   console.log(apiUrl);
+  axios.get(apiUrl).then(showForecast);
 }
 
 function showConditions(response) {
@@ -138,4 +140,3 @@ let celsius = document.querySelector("#celsius-link");
 celsius.addEventListener("click", celsiusTemp);
 
 liveCity("Cape Town");
-showForecast();
