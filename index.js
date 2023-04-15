@@ -47,7 +47,7 @@ let h2 = document.querySelector("h2");
 h2.innerHTML = ` Last updated: ${day} ${hours}:${minutes}`;
 
 function showForecast(response) {
-  console.log(response.data.daily);
+  console.log(response.data);
   let weatherForecast = document.querySelector("#forecast");
   let forecastHTML = `<div class="row align-items-end"`;
   let days = ["Friday", "Saturday", "Sunday", "Monday", "Tuesday"];
