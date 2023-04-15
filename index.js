@@ -59,7 +59,6 @@ function showForecast() {
             <div>20km/h</div>
             <div>39%</div>
   </div>
-  </div>
 `;
   });
   forecastHTML = forecastHTML + `</div>`;
