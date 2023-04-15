@@ -58,7 +58,9 @@ function showForecast() {
             <div><img src="clipart216360.png" alt="sunny weather" width="50px" /></div>
             <div>20km/h</div>
             <div>39%</div>
-  </div>
+            </div>
+            </div>
+            </div>
 `;
   });
   forecastHTML = forecastHTML + `</div>`;
