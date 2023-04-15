@@ -53,7 +53,10 @@ function showForecast() {
   days.forEach(function (day) {
     forecastHTML =
       forecastHTML +
-      `<div class="col" >${day}</div> <div>30°C</div><div><img src="clipart216360.png" alt="sunny weather" width="50px" /></div><div>20km/h</div>  <div>39%</div>
+      `<div class="col" >${day}</div>
+       <div>30°C</div><div><img src="clipart216360.png" alt="sunny weather" width="50px" /></div>
+       <div>20km/h</div> 
+       <div>39%</div>
             </div>
             </div>
             </div>
@@ -61,6 +64,10 @@ function showForecast() {
   });
   forecastHTML = forecastHTML + `</div>`;
   weatherForecast.innerHTML = forecastHTML;
+}
+
+function liveForecast(coordinates) {
+  console.log(coordinates);
 }
 
 function showConditions(response) {
@@ -83,6 +90,8 @@ function showConditions(response) {
     "src",
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+
+  liveForecast(response.data.coord);
 }
 
 function liveCity(city) {
