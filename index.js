@@ -60,7 +60,6 @@ function showForecast() {
             <div>39%</div></div>
   </div>
   </div>
-  </div>
 `;
   });
   forecastHTML = forecastHTML + `</div>`;
