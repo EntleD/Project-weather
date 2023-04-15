@@ -88,8 +88,6 @@ function showConditions(response) {
     "src",
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-
-  liveForecast(response.data.coord);
 }
 
 function liveCity(city) {
