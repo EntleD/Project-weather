@@ -48,11 +48,10 @@ h2.innerHTML = ` Last updated: ${day} ${hours}:${minutes}`;
 
 function liveForecast(coordinates) {
   console.log(coordinates);
-  let lat = coordinates.lat;
-  let lon = coordinates.lon;
   let apiKey = "1283946bf8748d1390tfdoecb43eac44";
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&key=$apiKey}&units=metric`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=${coordinates.latitude}&lon=${coordinates.longitude}&key=${apiKey}&units=metric`;
   console.log(apiUrl);
+  axios.get(apiUrl).then(showForecast);
 }
 
 function showForecast(response) {
@@ -63,18 +62,21 @@ function showForecast(response) {
   days.forEach(function (day) {
     forecastHTML =
       forecastHTML +
-      `<div class="col"></div>
-       <div>${day}</div>
-       <div>30°C</div><div><img src="clipart216360.png" alt="sunny weather" width="50px" /></div>
-       <div>20km/h</div> 
-       <div>39%</div>
-            </div>
-            </div>
-            </div>
+      `<div class="col-2">
+            <div class="weather-forecast-date">${day}</div>
+            <div class="weather=forecasts-maxTemp">30°C</div> 
+              <img src="clipart216360.png" alt="" width="42" />
+                 <div class="weather-forecasts-conditions">
+                <span class="weather-forecasts-wind">
+                  20km/h </span>
+              <div class="weather-forecasts-humidity">39%</div>    
+          </div>
+      </div>
 `;
   });
   forecastHTML = forecastHTML + `</div>`;
   weatherForecast.innerHTML = forecastHTML;
+  console.log(forecastHTML);
 }
 
 function showConditions(response) {
@@ -86,19 +88,20 @@ function showConditions(response) {
   let fogElement = document.querySelector("#humidity");
   let mainIcon = document.querySelector("#weather-icon");
 
-  mainCelsius = response.data.main.temp;
+  mainCelsius = response.data.temperature.current;
 
   temperatureElement.innerHTML = Math.round(mainCelsius);
-  cityElement.innerHTML = response.data.name;
-  description.innerHTML = response.data.weather[0].description;
+  cityElement.innerHTML = response.data.city;
+  description.innerHTML = response.data.condition.description;
   blowElement.innerHTML = Math.round(response.data.wind.speed);
-  fogElement.innerHTML = response.data.main.humidity;
+  fogElement.innerHTML = response.data.temperature.humidity;
+
   mainIcon.setAttribute(
     "src",
-    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${icon}.png`
+    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
 
-  liveForecast(response.data.coord);
+  liveForecast(response.data.coordinates);
 }
 
 function liveCity(city) {
