@@ -9,7 +9,6 @@
   max-width: 900px;
   border: 1px solid black;
   border-radius: 10px;
-  color: #e3f6f5;
 }
 
 .weather-forecasts-description {
@@ -57,6 +56,5 @@ li {
   color: black;
   font-size: 40px;
   font-weight: 500;
-   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
