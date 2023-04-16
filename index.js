@@ -57,7 +57,7 @@ function liveForecast(coordinates) {
 function showForecast(response) {
   console.log(response.data.daily);
   let weatherForecast = document.querySelector("#forecast");
-  let forecastHTML = `<div class="row"`;
+  let forecastHTML = `<div class="row">`;
   let days = ["Friday", "Saturday", "Sunday", "Monday", "Tuesday"];
   days.forEach(function (day) {
     forecastHTML =
