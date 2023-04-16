@@ -5,8 +5,9 @@
 .project-weather {
   margin: 25px auto;
   padding: 0 0 0 30px;
-  max-width: 1000px;
+  max-width: 900px;
   border-radius: 10px;
+  border: 1px solid blue;
 }
 
 .weather-forecasts-description {
