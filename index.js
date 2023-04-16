@@ -50,8 +50,8 @@ function liveForecast(coordinates) {
   console.log(coordinates);
   let lat = coordinates.lat;
   let lon = coordinates.lon;
-  let apiKey = "32b60624683015da61e2ddd35066df2b";
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=$apiKey}&units=metric`;
+  let apiKey = "1283946bf8748d1390tfdoecb43eac44";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&key=$apiKey}&units=metric`;
   console.log(apiUrl);
 }
 
@@ -95,15 +95,15 @@ function showConditions(response) {
   fogElement.innerHTML = response.data.main.humidity;
   mainIcon.setAttribute(
     "src",
-    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${icon}.png`
   );
 
   liveForecast(response.data.coord);
 }
 
 function liveCity(city) {
-  let apiKey = "32b60624683015da61e2ddd35066df2b";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  let apiKey = "1283946bf8748d1390tfdoecb43eac44";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showConditions);
 }
 
