@@ -1,12 +1,11 @@
 .container.text-center {
   padding-top: 100px;
-  padding-bottom: 30px;
 }
 
 .project-weather {
   margin: 25px auto;
   padding: 0 0 0 30px;
-  max-width: 900px;
+  max-width: 1000px;
   border: 1px solid black;
   border-radius: 10px;
 }
