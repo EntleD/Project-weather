@@ -71,20 +71,19 @@ function showForecast(response) {
       forecastHTML =
         forecastHTML +
         `<div class="col-2">
-            <div class="weather-forecast-date">${fixDay(forecastDay.time)}</div>
-            <div class="weather=forecasts-maxTemp">${Math.round(
+            <div class="weather-forecasts-date">${fixDay(
+              forecastDay.time
+            )}</div>
+            <div class="weather-forecasts-maxTemp">${Math.round(
               forecastDay.temperature.day
-            )}</div> 
+            )}°C</div> 
               <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
                 forecastDay.condition.icon
-              }.png" alt="" width="40" />
+              }.png" alt="" width="80" />
                  <div class="weather-forecasts-conditions">
-                <span class="weather-forecasts-wind">${Math.round(
-                  forecastDay.wind.speed
-                )}km/h</span>
-              <div class="weather-forecasts-humidity">${
-                forecastDay.temperature.humidity
-              }%</div>    
+                <span class="weather-forecasts-description">${
+                  forecastDay.condition.description
+                }</span>  
           </div>
       </div>
 `;

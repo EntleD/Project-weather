@@ -51,18 +51,16 @@
       </h4>
 
       <div class="row">
-        <div class="col-sm-6 mb-3 mb-sm-0">
-        <div class="card" style="width: 18rem;">
+        <div class="col-6">
+        <div class="card border-info mb-3" style="width: 18rem;">
         <div class="card-body" >
-        <img src="https://openweathermap.org/img/wn/04d@2x.png" alt="overcast clouds" id="weather-icon"/>
+        <img src=`http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png` id="weather-icon"/>
   <span class="temperature" id="temperature"></span> 
 					<span class ="units">°C</span>     
     </div>
     </div>
     </div>
   <div class="col md-6"> 
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
     <p class="card-text">
         <ul>
           <li id="weather-description">
@@ -76,9 +74,10 @@
       </div>      
       </div>
   </div>
-  </div>
+ 
 
-      <div class="container text-center" id="forecast"></div>
+      <div class="container text-center"> 
+      <div class="weather-forecasts" id="forecast"></div>
     
 <small> <a href="https://github.com/EntleD/Project-weather">Open-source code</a> by Entle Dubese </small> 
 
