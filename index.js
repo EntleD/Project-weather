@@ -46,37 +46,52 @@ console.log(now.getFullYear);
 let h2 = document.querySelector("h2");
 h2.innerHTML = ` Last updated: ${day} ${hours}:${minutes}`;
 
-function liveForecast(coordinates) {
-  console.log(coordinates);
-  let apiKey = "1283946bf8748d1390tfdoecb43eac44";
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=${coordinates.latitude}&lon=${coordinates.longitude}&key=${apiKey}&units=metric`;
-  console.log(apiUrl);
-  axios.get(apiUrl).then(showForecast);
+function fixDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+  ];
+  return days[day];
 }
 
 function showForecast(response) {
-  console.log(response.data.daily);
+  let dailyForecast = response.data.daily;
   let weatherForecast = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
-  let days = ["Friday", "Saturday", "Sunday", "Monday", "Tuesday"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col-2">
-            <div class="weather-forecast-date">${day}</div>
-            <div class="weather=forecasts-maxTemp">30°C</div> 
-              <img src="clipart216360.png" alt="" width="42" />
+  dailyForecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-2">
+            <div class="weather-forecast-date">${fixDay(forecastDay.time)}</div>
+            <div class="weather=forecasts-maxTemp">${Math.round(
+              forecastDay.temperature.day
+            )}</div> 
+              <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+                forecastDay.condition.icon
+              }.png" alt="" width="40" />
                  <div class="weather-forecasts-conditions">
-                <span class="weather-forecasts-wind">
-                  20km/h </span>
-              <div class="weather-forecasts-humidity">39%</div>    
+                <span class="weather-forecasts-wind">${Math.round(
+                  forecastDay.wind.speed
+                )}km/h</span>
+              <div class="weather-forecasts-humidity">${
+                forecastDay.temperature.humidity
+              }%</div>    
           </div>
       </div>
 `;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   weatherForecast.innerHTML = forecastHTML;
-  console.log(forecastHTML);
 }
 
 function showConditions(response) {
@@ -102,6 +117,14 @@ function showConditions(response) {
   );
 
   liveForecast(response.data.coordinates);
+}
+
+function liveForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "1283946bf8748d1390tfdoecb43eac44";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=${coordinates.latitude}&lon=${coordinates.longitude}&key=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(showForecast);
 }
 
 function liveCity(city) {
