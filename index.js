@@ -139,32 +139,9 @@ function searchCity(event) {
   liveCity(enterCity.value);
 }
 
-function fahrenheitTemp(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  celsius.classList.remove("active");
-  fahrenheit.classList.add("active");
-  let celsToFah = (mainCelsius * 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(celsToFah);
-}
-
-function celsiusTemp(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  celsius.classList.add("active");
-  fahrenheit.classList.remove("active");
-  temperatureElement.innerHTML = Math.round(mainCelsius);
-}
-
 let mainCelsius = null;
 
 let searchForm = document.querySelector("#city-form");
 searchForm.addEventListener("submit", searchCity);
-
-let fahrenheit = document.querySelector("#fahrenheit-link");
-fahrenheit.addEventListener("click", fahrenheitTemp);
-
-let celsius = document.querySelector("#celsius-link");
-celsius.addEventListener("click", celsiusTemp);
 
 liveCity("Cape Town");
