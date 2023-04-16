@@ -1,6 +1,12 @@
+.container.text-center {
+  padding-top: 100px;
+  padding-bottom: 30px;
+}
+
 .project-weather {
   margin: 25px auto;
-  max-width: 1500px;
+  padding: 0 0 0 30px;
+  max-width: 900px;
   border-radius: 10px;
   border: 1px solid blue;
 }
